@@ -18,43 +18,41 @@ console.log("Fetching users and tasks...");
     console.log("Users: " , users)
     console.log ("Tasks: ", tasks)
 
-// assign task to user
-// const assigntasks = new User(1,"Ali","ali@example.com",);
-// assigntasks.assignTask();
-const assigntasks = new User(1, "Ali", "ali@example.com");
-const task = {
-  id: 101,
-  title: "Test Feature",
-  description: "Test the new feature release",
-  status: "pending",
-  assignee: 1
-};
-assigntasks.assignTask(task);
+    // 1- Assign Tasks to Users 
+// const assignableTask : User  = users[0];
+// assignableTask.assignTask(tasks[0])
+// users[1].
 
-//taskmanager  to add task
-// const taskmanager = new TaskManager();
-// taskmanager.addTask;
-const taskmanager = new TaskManager();
-const newTask = {
-  id: 1,
-  title: "Fix login bug",
-  description: "Fix the issue with login API",
-  status: "pending",
-  assignee: 2
-};
-taskmanager.addTask(newTask);
+const firstUser = users[0]; {
+    firstUser.assignTask(task);
+}
+console.log("Tasks after assignment:", firstUser.tasks);
+    
 
-//Filter tasks by status
-// const filtertaskbyStatus = new TaskManager();
-//filtertaskbyStatus.getTaskByStatus;
-const filtertaskbyStatus = new TaskManager();
-const result = filtertaskbyStatus.getTaskByStatus("pending"); 
-console.log(result);
+   // 2- Create Task manager 
+const taskManager = new TaskManager();
 
-// Filter task by User
-const filtertaskbyUser = new TaskManager();
-const userTasks = filtertaskbyUser.getTaskByUser(2);
-console.log(userTasks);
+    // 3- Add these tasks to task manager
+//tasks.forEach(task => taskManager.addTask(task));
+for (let i =0; i< tasks.length; i++){
+    taskManager.addTask(tasks[i])
+}
+
+   // 4- Filter Task by status
+const pendingTasks = taskManager.getTaskByStatus(TaskStatus.Completed);
+console.log("Pending Tasks:", pendingTasks);
+
+    // 5- filter task by user    
+const filteredTasks = taskManager.getTaskByUser(2); 
+console.log("Filtered Tasks:", filteredTasks);
+
+    // 6- find task by id 
+const TaskById = taskManager.findTask(2);
+console.log("Task by Id: " , TaskById);
+
+    // 7- find task by title 
+const TaskByTitle = taskManager .findTask ("TaskByTitle");
+console.log("Task by Title: " , TaskByTitle);
 
 //Use Paginate and log first page
 const firstPage = paginate(tasks, 2, 1);

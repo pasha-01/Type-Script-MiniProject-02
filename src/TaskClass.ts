@@ -4,10 +4,10 @@ import { TaskStatus } from "./Enum";
 export {Task}
 class Task implements ITask {
     constructor (
-        public id: number,
+            public id: number,
             public title: string,
             public description: string,
-            public assignee: IUser,
+            public assignee: IUser | null,
             public status: TaskStatus) 
             {
                 this.id = id;
