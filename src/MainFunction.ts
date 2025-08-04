@@ -21,12 +21,14 @@ console.log("Fetching users and tasks...");
     // 1- Assign Tasks to Users 
 // const assignableTask : User  = users[0];
 // assignableTask.assignTask(tasks[0])
-// users[1].
 
-const firstUser = users[0]; {
-    firstUser.assignTask(tasks);
-}
+
+
+// 1- Assign Tasks to Users 
+const firstUser = users[0];
+firstUser.assignTask(tasks[0]);
 console.log("Tasks after assignment:", firstUser.tasks);
+
     
 
    // 2- Create Task manager 
