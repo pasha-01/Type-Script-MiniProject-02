@@ -24,7 +24,7 @@ console.log("Fetching users and tasks...");
 // users[1].
 
 const firstUser = users[0]; {
-    firstUser.assignTask(task);
+    firstUser.assignTask(tasks);
 }
 console.log("Tasks after assignment:", firstUser.tasks);
     
@@ -33,10 +33,7 @@ console.log("Tasks after assignment:", firstUser.tasks);
 const taskManager = new TaskManager();
 
     // 3- Add these tasks to task manager
-//tasks.forEach(task => taskManager.addTask(task));
-for (let i =0; i< tasks.length; i++){
-    taskManager.addTask(tasks[i])
-}
+tasks.forEach(task => taskManager.addTask(task));
 
    // 4- Filter Task by status
 const pendingTasks = taskManager.getTaskByStatus(TaskStatus.Completed);
