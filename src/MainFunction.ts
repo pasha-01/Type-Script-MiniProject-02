@@ -25,9 +25,9 @@ console.log("Fetching users and tasks...");
 
 
 // 1- Assign Tasks to Users 
-const firstUser = users[0];
-firstUser.assignTask(tasks[0]);
-console.log("Tasks after assignment:", firstUser.tasks);
+const firstUser = users[0] as User;
+firstUser.assignTask(tasks[0] as Task);
+console.log("Tasks after assignment:", firstUser);
 
     
 
